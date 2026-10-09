@@ -1,0 +1,13 @@
+{
+  "name": "lead-hunter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "صائد العملاء — Lead Hunter: أداة شخصية لإدارة العملاء المحتملين (بدون حزم خارجية)",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning server/index.ts",
+    "dev": "node --watch --experimental-strip-types --disable-warning=ExperimentalWarning server/index.ts",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning test/e2e.ts && node --experimental-strip-types --disable-warning=ExperimentalWarning test/persist.ts"
+  }
+}

@@ -1,0 +1,27 @@
+# Blueprint لـ Render. القرص الدائم يتطلب خطة مدفوعة (starter فما فوق) — الخطة المجانية بلا قرص دائم.
+services:
+  - type: web
+    name: lead-hunter
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: echo "no build step - web/dist is committed"
+    startCommand: node --experimental-strip-types --disable-warning=ExperimentalWarning server/index.ts
+    healthCheckPath: /api/health
+    disk:
+      name: lead-hunter-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: PERSISTENT_STORAGE
+        value: "1"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SETUP_CODE
+        sync: false   # يطلبه Render منك عند الإنشاء — لا يُكتب في الكود

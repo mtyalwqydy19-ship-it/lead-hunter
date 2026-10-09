@@ -1,0 +1,12 @@
+{
+  "name": "lead-hunter-web",
+  "private": true,
+  "type": "module",
+  "description": "واجهة صائد العملاء — React + TypeScript + Tailwind v4، تُبنى بـ esbuild إلى web/dist",
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" },
+  "devDependencies": { "esbuild": "^0.28.0", "tailwindcss": "^4.0.0", "typescript": "^5.6.0", "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0" }
+}
